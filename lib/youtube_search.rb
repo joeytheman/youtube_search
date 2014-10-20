@@ -17,6 +17,10 @@ module YoutubeSearch
       search_page("#{API_URL}/videos", query, options)
     end
 
+    def search_channels(query, options={})
+      search_page("#{API_URL}/channels", query, options.merge(:v => 2))
+    end
+
     def search_playlists(query, options={})
       search_page("#{API_URL}/playlists/snippets", query, options.merge(:v => 2))
     end
